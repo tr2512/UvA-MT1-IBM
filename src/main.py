@@ -45,7 +45,7 @@ def run(corpus, ibm_cls, ibm_init, packs_path, corpus_name, n):
                     with open(path.join(packs_path, corpus_name + '.results'), "a") as results_handle:
                         results_handle.write("%d,%.4f,%.5f\n" % (s, time, likelihood))
 
-                with open(curr_pack_path, 'w') as stream:
+                with open(curr_pack_path, 'wb') as stream:
                     model.dump(stream)
                     print("Dumped %s" % curr_pack_path)
 
