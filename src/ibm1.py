@@ -74,7 +74,7 @@ class IBM:
             p_values = g(len(aligns_to_e))
             t.update(zip(aligns_to_e, p_values))
 
-        print "\rInit     100.00%% (Elapsed: %.2fs)" % (time.time() - start)
+        print("\rInit     100.00%% (Elapsed: %.2fs)" % (time.time() - start))
         return cls(defaultdict(float, t), param)
 
 
