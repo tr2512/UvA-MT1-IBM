@@ -66,7 +66,7 @@ def test_model(model, eval_data_path, corpus_name, s):
     test_corpus_path = path.join(test_path, 'test', test_corpus_name)
     fr_test_corpus_path = test_corpus_path + '.f'
     en_test_corpus_path = test_corpus_path + '.e'
-    test_corpus = zip(read_corpus(fr_test_corpus_path), read_corpus(en_test_corpus_path))
+    test_corpus = list(zip(read_corpus(fr_test_corpus_path), read_corpus(en_test_corpus_path)))
 
     if not path.isdir(eval_data_path):
         os.makedirs(eval_data_path)
@@ -107,7 +107,7 @@ def main():
     en_corpus_path = corpus_path + '.e'
     en_corpus = read_corpus(en_corpus_path)
     en_vocabulary_len = len(set(itertools.chain(*en_corpus)))
-    corpus = zip(read_corpus(fr_corpus_path), en_corpus)
+    corpus = list(zip(read_corpus(fr_corpus_path), en_corpus))
 
     # Train IBM2 by setting t as the output of 5 iterations of IBM1
     ibm = ibm1.IBM
