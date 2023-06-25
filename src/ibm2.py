@@ -72,7 +72,7 @@ class IBM:
                 for j in range(0, l):
                     q[(j, i, l, m)] = p_values[j]
 
-        print "\rInit     100.00%% (Elapsed: %.2fs)" % (time.time() - start)
+        print("\rInit     100.00%% (Elapsed: %.2fs)" % (time.time() - start))
         return cls(defaultdict(float, t), defaultdict(float, q))
 
 
