@@ -49,7 +49,7 @@ class IBM:
         # "Compute initial probabilities for each alignment..."
         k = 0
         t = dict()
-        for e, aligns_to_e in aligns.iteritems():
+        for e, aligns_to_e in aligns.items():
 
             if k % 1000 == 0:
                 stdout.write("\rInit    %6.2f%%" % (33 + ((33 * k) / float(len(aligns)))))
@@ -137,8 +137,8 @@ class IBM:
                     c4[(i, l, m)]          += delta
 
         # The M-Step
-        self.t = defaultdict(float, {k: v / c2[k[1:]] for k, v in c1.iteritems() if v > 0.0})
-        self.q = defaultdict(float, {k: v / c4[k[1:]] for k, v in c3.iteritems() if v > 0.0})
+        self.t = defaultdict(float, {k: v / c2[k[1:]] for k, v in c1.items() if v > 0.0})
+        self.q = defaultdict(float, {k: v / c4[k[1:]] for k, v in c3.items() if v > 0.0})
 
         duration = (time.time() - start)
         print("\rPass %2d: 100.00%% (Elapsed: %.2fs) (Log-likelihood: %.5f)" % (passnum, duration, likelihood))
