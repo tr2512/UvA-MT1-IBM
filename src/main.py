@@ -47,7 +47,7 @@ def run(corpus, ibm_cls, ibm_init, packs_path, corpus_name, n):
 
                 with open(curr_pack_path, 'w') as stream:
                     model.dump(stream)
-                    print "Dumped %s" % curr_pack_path
+                    print("Dumped %s" % curr_pack_path)
 
             # Generate evaluation file for testing the model
             test_model(model, packs_path, corpus_name, s)
@@ -91,10 +91,10 @@ def print_test_example(ibm):
 
     a = ibm.viterbi_alignment(f, e)
 
-    print ' '.join(e)
-    print ' '.join(f)
+    print(' '.join(e))
+    print(' '.join(f))
     e = ['NULL'] + e
-    print ' '.join([e[j] for j in a])
+    print(' '.join([e[j] for j in a]))
 
 
 def main():
