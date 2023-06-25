@@ -33,7 +33,7 @@ def run(corpus, ibm_cls, ibm_init, packs_path, corpus_name, n):
             if path.isfile(curr_pack_path):
                 with open(curr_pack_path, 'r') as stream:
                     model = ibm_cls.load(stream)
-                    print "Loaded %s" % curr_pack_path
+                    print("Loaded %s" % curr_pack_path)
 
             else:
                 if model is None:
